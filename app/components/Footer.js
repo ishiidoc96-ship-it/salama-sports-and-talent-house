@@ -1,67 +1,119 @@
 ﻿import Link from "next/link";
-import { Phone, Mail, MapPin, Globe, ExternalLink } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/config";
 
-const services = [
-  { label: "Houses", href: "/buy" },
-  { label: "Land", href: "/land" },
-  { label: "Rentals", href: "/rent" },
-  { label: "Commercial Property", href: "/buy" },
-  { label: "Property Requests", href: "/contact" },
-  { label: "List Your Property", href: "/contact" },
+const categories = [
+  { label: "Sports", href: "/sports" },
+  { label: "Swimming", href: "/swimming" },
+  { label: "Handbags", href: "/handbags" },
+  { label: "Kids", href: "/kids" },
+  { label: "New Arrivals", href: "/new-arrivals" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-gradient text-white">
+    <footer className="bg-navy-gradient text-white">
       <div className="container-wide mx-auto section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-brand-gold flex items-center justify-center">
-                <span className="text-white font-serif font-bold text-lg leading-none">J</span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center">
+                <span className="text-white font-heading font-bold text-lg leading-none">
+                  S
+                </span>
               </div>
-              <span className="font-serif font-bold text-lg tracking-tight">{SITE.COMPANY_NAME}</span>
+              <div>
+                <span className="font-heading font-bold text-sm tracking-tight block leading-tight">
+                  SALAMA
+                </span>
+                <span className="text-[10px] font-medium tracking-wider uppercase text-white/60 block">
+                  Sports & Talent House
+                </span>
+              </div>
             </div>
-            <p className="text-brand-stone-400 text-sm leading-relaxed mb-6">{SITE.TAGLINE}</p>
-            <div className="flex gap-3">
-              {SITE.SOCIAL_FACEBOOK && <a href={SITE.SOCIAL_FACEBOOK} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors" aria-label="Facebook"><Globe className="w-4 h-4" /></a>}
-              {SITE.SOCIAL_INSTAGRAM && <a href={SITE.SOCIAL_INSTAGRAM} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors" aria-label="Instagram"><Globe className="w-4 h-4" /></a>}
-              {SITE.SOCIAL_LINKEDIN && <a href={SITE.SOCIAL_LINKEDIN} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors" aria-label="LinkedIn"><Globe className="w-4 h-4" /></a>}
-            </div>
+            <p className="text-brand-slate-400 text-sm leading-relaxed mb-4">
+              {SITE.TAGLINE}
+            </p>
+            <p className="text-brand-slate-500 text-xs leading-relaxed">
+              Sports &bull; Swimming &bull; Fashion &bull; Kids &bull; More
+            </p>
           </div>
+
           <div>
-            <h3 className="font-serif font-semibold text-white mb-4">Navigation</h3>
+            <h3 className="font-heading font-semibold text-white mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2.5">
               {NAV_LINKS.map((link) => (
-                <li key={link.href}><Link href={link.href} className="text-brand-stone-400 text-sm hover:text-brand-gold transition-colors">{link.label}</Link></li>
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-brand-slate-400 text-sm hover:text-brand-blue transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
+
           <div>
-            <h3 className="font-serif font-semibold text-white mb-4">Services</h3>
+            <h3 className="font-heading font-semibold text-white mb-4">
+              Categories
+            </h3>
             <ul className="space-y-2.5">
-              {services.map((s) => (
-                <li key={s.label}><Link href={s.href} className="text-brand-stone-400 text-sm hover:text-brand-gold transition-colors">{s.label}</Link></li>
+              {categories.map((cat) => (
+                <li key={cat.href}>
+                  <Link
+                    href={cat.href}
+                    className="text-brand-slate-400 text-sm hover:text-brand-blue transition-colors"
+                  >
+                    {cat.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
+
           <div>
-            <h3 className="font-serif font-semibold text-white mb-4">Contact</h3>
+            <h3 className="font-heading font-semibold text-white mb-4">
+              Visit Us
+            </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-brand-stone-400 text-sm"><Phone className="w-4 h-4 mt-0.5 shrink-0" /><span>{SITE.PHONE}</span></li>
-              <li className="flex items-start gap-3 text-brand-stone-400 text-sm"><Mail className="w-4 h-4 mt-0.5 shrink-0" /><span>{SITE.EMAIL}</span></li>
-              <li className="flex items-start gap-3 text-brand-stone-400 text-sm"><MapPin className="w-4 h-4 mt-0.5 shrink-0" /><span>{SITE.LOCATION}</span></li>
+              <li className="flex items-start gap-3 text-brand-slate-400 text-sm">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-brand-blue" />
+                <span>{SITE.LOCATION}</span>
+              </li>
+              <li className="flex items-start gap-3 text-brand-slate-400 text-sm">
+                <Phone className="w-4 h-4 mt-0.5 shrink-0 text-brand-blue" />
+                <span>{SITE.PHONE}</span>
+              </li>
+              <li className="flex items-start gap-3 text-brand-slate-400 text-sm">
+                <MessageCircle className="w-4 h-4 mt-0.5 shrink-0 text-[#25D366]" />
+                <span>{SITE.WHATSAPP}</span>
+              </li>
+              <li className="flex items-start gap-3 text-brand-slate-400 text-sm">
+                <Mail className="w-4 h-4 mt-0.5 shrink-0 text-brand-blue" />
+                <span>{SITE.EMAIL}</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
+
       <div className="border-t border-white/10">
         <div className="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-brand-stone-500 text-sm">&copy; {new Date().getFullYear()} {SITE.COMPANY_NAME}. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-brand-stone-500">
-            <Link href="/privacy" className="hover:text-brand-gold transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-brand-gold transition-colors">Terms of Service</Link>
+          <p className="text-brand-slate-500 text-sm">
+            &copy; {new Date().getFullYear()} {SITE.COMPANY_NAME}. All rights
+            reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-brand-slate-500">
+            <Link href="/about" className="hover:text-brand-blue transition-colors">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-brand-blue transition-colors">
+              Contact
+            </Link>
           </div>
         </div>
       </div>
