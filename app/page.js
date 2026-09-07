@@ -38,7 +38,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="animate-fade-up animate-delay-400">
-            <SearchPanel />
+            
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-cream to-transparent" />
