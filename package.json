@@ -1,26 +1,19 @@
 {
-  "name": "efk-battles",
+  "name": "salama-sports-and-talent-house",
   "version": "1.0.0",
   "private": true,
-  "description": "eFootball Kenya Battles - anonymous 100 KES mobile tournaments (M-Pesa + WhatsApp + Supabase)",
+  "description": "SALAMA SPORTS AND TALENT HOUSE - Sports, Swimming, Fashion & Kids in Kilifi Town",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "node server.js",
-    "whatsapp": "node whatsapp-server.js"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@lipana/sdk": "^1.0.3",
-    "@supabase/supabase-js": "^2.115.0",
-    "@whiskeysockets/baileys": "^7.0.0-rc14",
     "autoprefixer": "^10.4.21",
-    "express": "^4.21.2",
-    "nanoid": "^5.0.9",
+    "lucide-react": "^1.41.0",
     "next": "15.5.25",
-    "pino": "^10.3.1",
     "postcss": "^8.5.3",
-    "qrcode": "^1.5.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "tailwindcss": "^3.4.17"
